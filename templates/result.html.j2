@@ -1,0 +1,58 @@
+{% extends 'home.html.j2'%}
+
+{% block showresult %}
+<p>
+	Candlestick Chart of last 3 months data:<br>
+	<img src="/media/candlestick.png" alt="Candlestick Chart" id="candle" name="candle">
+</p>
+<p>
+	Last 1 month's Low : {{Low}} on {{lowDate}}<br>
+	Last 1 month's High : {{High}} on {{highDate}}
+</p>
+<p>
+	Predicted dates for next month's high/low:<br>
+	{% for i in predictedDates %}
+	{{i}}<br>
+	{% endfor %}
+</p>
+<p>
+	Predicted prices of next month's Elliott Wave:<br>
+	<table id="table1">
+		<tr>
+			<td>Wave 1 : {{elliottPrices.0}} - {{elliottPrices.1}}</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Wave 2 : {{elliottPrices.1}} - {{elliottPrices.2}}</td>
+			<td>Wave A : {{elliottPrices.5}} - {{elliottPrices.6}}</td>
+		</tr>
+		<tr>
+			<td>Wave 3 : {{elliottPrices.2}} - {{elliottPrices.3}}</td>
+			<td>Wave B : {{elliottPrices.6}} - {{elliottPrices.7}}</td>
+		</tr>
+		<tr>
+			<td>Wave 4 : {{elliottPrices.3}} - {{elliottPrices.4}}</td>
+			<td>Wave C : {{elliottPrices.7}} - {{elliottPrices.8}}</td>
+		</tr>
+		<tr>
+			<td>Wave 5 : {{elliottPrices.4}} - {{elliottPrices.5}}</td>
+			<td></td>
+		</tr>
+	</table>
+</p>
+{% endblock %}
+
+<style type="text/css">
+	img{
+		height: 30%;
+		width: 30%
+	}
+	table#table1 {
+    	width:70%; 
+    	margin-left:15%; 
+    	margin-right:15%;
+	}
+	th, td, tr{
+		text-align: left;
+	}
+</style>

@@ -1,0 +1,20 @@
+{% extends 'base.html.j2'%}
+
+{% block getdata %}
+<p>
+<form action="stock" method="GET">
+<label for="stockcode">Select the stock code :</label>
+<input list="stockcode" name="stockcode">
+<datalist id="stockcode">
+	{% for code, name in stocks.items %}
+	<option value="{{code}} - {{name}}">
+	{% endfor %}
+</datalist>
+<input type="submit">
+</form>
+</p>
+{% block showresult %}
+
+{% endblock %}
+
+{% endblock %}
