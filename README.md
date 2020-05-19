@@ -1,1 +1,3 @@
-download unpack and open cmd inside the folder\ntype python manage.py runserver\nin the browser, go to 127.0.0.1:8000
+download unpack and open cmd inside the folder
+type python manage.py runserver
+in the browser, go to 127.0.0.1:8000
