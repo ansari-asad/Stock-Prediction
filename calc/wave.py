@@ -51,14 +51,17 @@ def downtrend(LowPrice, HighPrice):
 def elliott(stock, LowPrice, HighPrice, ClosePrice, low_date, high_date):
     low_date = datetime.strptime(low_date, '%Y-%m-%d').date()
     high_date = datetime.strptime(high_date, '%Y-%m-%d').date()
+    elliottwave = dict()
+
     if ClosePrice < HighPrice:
         print('downtrend')
+        elliottwave['trend'] = 'Downtrend'
         points=downtrend(LowPrice, HighPrice)
     else:
         print('uptrend')
+        elliottwave['trend'] = 'Uptrend'
         points=uptrend(LowPrice, HighPrice)
-    elliottwave = dict()
-    points = [round(i) for i in points]
+        points = [round(i) for i in points]
     elliottwave['elliottPrices'] = points
 
     #degree conversion
