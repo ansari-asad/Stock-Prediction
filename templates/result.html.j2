@@ -1,14 +1,19 @@
 {% extends 'home.html.j2'%}
 
 {% block showresult %}
-<p>
-	Candlestick Chart of last 3 months data:<br>
-	<img src="/media/candlestick.png" alt="Candlestick Chart" id="candle" name="candle">
-</p>
-<p>
-	Last 1 month's Low : {{Low}} on {{lowDate}}<br>
-	Last 1 month's High : {{High}} on {{highDate}}
-</p>
+
+<center><p>
+<table id="table" border=2px cell-padding:'3px' width=60% style="text-align:center; color:white;">
+<thead><td>Last 1 month's</td><td>Low </td><td>High</td></thead>
+<tbody>
+<tr>
+<td>..</td>
+	<td> {{Low}} on {{lowDate}}</td>
+	<td>{{High}} on {{highDate}}</td>
+</tr>
+</tbody>
+</table>
+</p></center>
 <p>
 	Predicted dates for next month's high/low:<br>
 	{% for i in predictedDates %}
@@ -16,9 +21,10 @@
 	{% endfor %}
 </p>
 <div id="elliott">
+<center>
 <p>
 	Predicted prices of next month's Elliott Wave:<br>
-	<table id="table1">
+	<table id="table1" border=3px width=60% style="text-align:center;">
 		<tr>
 			<td>Wave 1 : {{elliottPrices.0}} - {{elliottPrices.1}}</td>
 			<td></td>
@@ -40,13 +46,18 @@
 			<td></td>
 		</tr>
 	</table>
+	<p>
+	{{trend}}
+	Candlestick Chart of last 3 months data:<br>
+	<img src="/media/candlestick.png" alt="Candlestick Chart" id="candle" name="candle">
 </p>
+</p></center>
 </div>
 {% endblock %}
 
 <style type="text/css">
 	img{
-		height: 30%;
+		height: 25%;
 		width: 30%
 	}
 	table#table1 {

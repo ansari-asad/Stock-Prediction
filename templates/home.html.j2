@@ -1,9 +1,11 @@
 {% extends 'base.html.j2'%}
 
 {% block getdata %}
-<p>
+
+<p id="stsel">
+<h3 id='title'> Stock Market Prediction using Gann's Method</h3>
 <form action="stock" method="GET">
-<label for="stockcode">Select the stock code :</label>
+<label for="stockcode" id="ss">Select the stock code :</label>
 <input list="stockcode" name="stockcode">
 <datalist id="stockcode">
 	{% for code, name in stocks.items %}
@@ -13,8 +15,15 @@
 <input type="submit">
 </form>
 </p>
+<hr>
 {% block showresult %}
 
 {% endblock %}
 
 {% endblock %}
+<style type="text/css">
+		
+		#ss{
+
+		}
+</style>
